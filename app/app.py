@@ -38,6 +38,14 @@ def home():
         "message": "Calculator Backend API is running"
     }
 
+@app.get("/health")
+def health():
+
+    logger.info("Health endpoint called")
+
+    return {
+        "status": "healthy"
+    }
 
 # Calculator Endpoint
 @app.post("/calculate")
